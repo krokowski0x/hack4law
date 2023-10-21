@@ -27,11 +27,20 @@ export default function Chat() {
 
   return (
     <div className="mx-auto w-full h-full flex flex-col p-8">
-      <h1>Alimenciarz 2.0</h1>
-      <div className="my-24 flex gap-2">
+      <h1 className="normal-case text-2xl font-bold mb-20">Alimenciarz 2.0</h1>
+
+
+      {activeCase ? (
+        <>
+        <a className="link mb-4" onClick={() => setActiveCase(null)}>Wróć do wyników</a>
+        <CaseDetailsPage caseDetails={activeCase}  />
+        </>
+      ) : (
+        <>
+              <div className="my-4 flex justify-center gap-2">
         <input
           type="text"
-          className="input input-bordered w-full max-w-xs"
+          className="input input-bordered w-full max-w-md"
           value={query}
           placeholder="Sprawy w których dwójka nieletnich dzieci..."
           onChange={(e) => setQuery(e.target.value)}
@@ -52,10 +61,6 @@ export default function Chat() {
           Wyszukaj
         </button>
       </div>
-      <button onClick={() => setActiveCase(null)}>Wróć do wyników</button>
-      {activeCase ? (
-        <CaseDetailsPage caseDetails={activeCase}  />
-      ) : (
         <div className="flex gap-4">
           {results.map((result) => (
             <div key={result.reference_number}>
@@ -63,6 +68,7 @@ export default function Chat() {
             </div>
           ))}
         </div>
+        </>
       )}
     </div>
   );

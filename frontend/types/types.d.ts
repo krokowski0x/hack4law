@@ -6,6 +6,7 @@ export interface CaseDetails {
   mother_income?: number
   father_income?: number
   siblings?: number
+  website?: string
   children?: ChildDetails[]
 }
 
@@ -16,4 +17,10 @@ export interface ChildDetails {
   general_expenses_plaintiff?: any
   general_expenses_court?: number
   additional_costs?: number
+}
+
+export interface BackendResponse {
+  result: string
+  sql: string
+  sqlResult: CaseDetails[]
 }
