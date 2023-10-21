@@ -16,8 +16,7 @@ CREATE TABLE Children (
     alimony_asked DECIMAL(10,2),
     alimony_granted DECIMAL(10,2),
     general_expenses_plaintiff DECIMAL(10,2),
-    general_expenses_court DECIMAL(10, 2)
+    general_expenses_court DECIMAL(10, 2),
     additional_costs DECIMAL(10,2),
-    PRIMARY KEY (reference_number),
     FOREIGN KEY (reference_number) REFERENCES Cases(reference_number)
 );
