@@ -1,5 +1,7 @@
 import { CaseDetails } from "@/types/types";
+import { fetcher } from "@/utils/inflation";
 import { useChat } from "ai/react";
+import useSWR from "swr";
 
 export default function CaseDetailsPage({
   caseDetails,
@@ -7,74 +9,106 @@ export default function CaseDetailsPage({
   caseDetails: CaseDetails;
 }) {
   const { messages, input, handleInputChange, handleSubmit, data } = useChat();
+  const { data: inflationData, error } = useSWR([500, "2020-01"], fetcher);
 
   return (
-    <div>
-      <h1>{caseDetails.reference_number}</h1>
-      <div className="stats shadow">
+    <div className="flex gap-4">
+      <div className="flex flex-col gap-2 w-1/2">
+        <div className="card bg-base-100 shadow-xl">
+          <div className="p-4">
+            <h2 className="card-title">
+              Orzecznie {caseDetails.reference_number}
+            </h2>
+            <p>z dnia {caseDetails.judgement_date}</p>
+            <h3>{caseDetails.court}</h3>
+            <div className="flex justify-between">
+                  <p>Dochód matki</p>
+                  <p>{caseDetails.mother_income}</p>
+                </div>
+                <div className="flex justify-between">
+                  <p>Dochód ojca</p>
+                  <p>{caseDetails.father_income}</p>
+                </div>
+            <h2 className="text-lg font-bold my-2">Dzieci:</h2>
+            {caseDetails.children?.map((child, i) => (
+              <div key={i} className="flex flex-col gap-1 pb-4">
+                <hr />
 
-{caseDetails.children?.map((child, i) => (
-  <div key={i} className="stat ">
-  <div className="stat-figure text-secondary">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-  </div>
-  <div className="stat-title">Downloads</div>
-  <div className="stat-value">31K</div>
-  <div className="stat-desc">Jan 1st - Feb 1st</div>
-</div>
-))}
-
-
-  <div className="stat">
-    <div className="stat-figure text-secondary">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
-    </div>
-    <div className="stat-title">New Users</div>
-    <div className="stat-value">4,200</div>
-    <div className="stat-desc">↗︎ 400 (22%)</div>
-  </div>
-
-  <div className="stat">
-    <div className="stat-figure text-secondary">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
-    </div>
-    <div className="stat-title">New Registers</div>
-    <div className="stat-value">1,200</div>
-    <div className="stat-desc">↘︎ 90 (14%)</div>
-  </div>
-
-</div>
-      {messages.map((m) => (
-        <div key={m.id}>
-          {m.role === "user" ? "User: " : "AI: "}
-          {m.role === "user" ? m.content : String(JSON.parse(m.content).text)}
-          {m.role !== "user" &&
-            JSON.parse(m.content).sourceDocuments.map((doc, i) => (
-<div key={i} className="collapse bg-base-200">
-  <input type="checkbox" />
-  <div className="collapse-title text-xl font-medium">
-Źródło {i + 1}
-  </div>
-  <div className="collapse-content">
-    <p>{doc.pageContent}</p>
-    <b>Strony {doc.metadata["loc.lines.from"]} - {doc.metadata["loc.lines.to"]}</b>
-  </div>
-</div>
-            ))
-          }
+                <div className="flex justify-between">
+                  <b>Wiek</b>
+                  <p>{child.child_age}</p>
+                </div>
+                <div className="flex justify-between">
+                  <b>Wnoszona kwota</b>
+                  <p>{child.alimony_asked}</p>
+                </div>
+                <div className="flex justify-between">
+                  <b>Zasądzona kwota</b>
+                  <p>{child.alimony_granted}</p>
+                </div>
+                <div className="flex justify-between">
+                  <b>Wydatki ogólne (powód)</b>
+                  <p>{child.general_expenses_plaintiff || "Brak"}</p>
+                </div>
+                <div className="flex justify-between">
+                  <b>Wydatki ogólne (sąd)</b>
+                  <p>{child.general_expenses_court}</p>
+                </div>
+                <div className="flex justify-between">
+                  <b>Potrzeby dodatkowe</b>
+                  <p>{child.additional_costs}</p>
+                </div>
+              </div>
+            ))}
+            <div className="card-actions justify-end">
+              <a target="_blank" href={caseDetails.website} className="btn btn-primary">
+                Pełne orzeczenie
+              </a>
+            </div>
+          </div>
         </div>
-      ))}
+      </div>
 
-      <form className="my-4 flex justify-center gap-2" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={input}
-          onChange={handleInputChange}
-          placeholder="Type here"
-          className="input input-bordered w-full max-w-xs"
-        />
-        <button className="btn btn-primary" type="submit">Zapytaj</button>
-      </form>
+      <div className="flex flex-col w-1/2">
+        {messages.map((m) => (
+          <div key={m.id} className="flex flex-col gap-2">
+            {m.role === "user" ? "User: " : "AI: "}
+            {m.role === "user" ? m.content : String(JSON.parse(m.content).text)}
+            {m.role !== "user" &&
+              JSON.parse(m.content).sourceDocuments.map((doc, i) => (
+                <div key={i} className="collapse collapse-arrow bg-white">
+                  <input type="radio" name="my-accordion-2"  />
+                  <div className="collapse-title text-xl font-medium">
+                    Źródło {i + 1}
+                  </div>
+                  <div className="collapse-content">
+                    <p>{doc.pageContent}</p>
+                    <b>
+                      Strony {doc.metadata["loc.lines.from"]} -{" "}
+                      {doc.metadata["loc.lines.to"]}
+                    </b>
+                  </div>
+                </div>
+              ))}
+          </div>
+        ))}
+
+        <form
+          className="my-4 flex justify-center gap-2"
+          onSubmit={handleSubmit}
+        >
+          <input
+            type="text"
+            value={input}
+            onChange={handleInputChange}
+            placeholder="Na jakiej podstawie sąd przynał dzieciom alimenty?"
+            className="input input-bordered w-full"
+          />
+          <button className="btn btn-primary" type="submit">
+            Zapytaj
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
