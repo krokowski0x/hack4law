@@ -18,7 +18,7 @@ async function sendRequest(url: string, { arg }: { arg: { query: string } }) {
 }
 
 export default function Chat() {
-  const { trigger } = useSWRMutation(
+  const { trigger, isMutating } = useSWRMutation(
     "http://localhost:3001/api/sql",
     sendRequest
   );
@@ -53,7 +53,7 @@ export default function Chat() {
               <div className="my-4 flex justify-items-center gap-4">
                 <input
                   type="text"
-                  className="input input-bordered input w-full"
+                  className="input input-bordered w-full"
                   value={query}
                   placeholder="Sprawy w których dwójka nieletnich dzieci..."
                   onChange={(e) => setQuery(e.target.value)}
@@ -64,14 +64,15 @@ export default function Chat() {
                   onClick={async () => {
                     try {
                       const result = await trigger({ query });
-                      setResults(result.sqlResult);
+                      setResults(JSON.parse(result.sqlResult));
                       console.log(results);
                     } catch (e) {
                       console.error(e);
                     }
                   }}
                 >
-                  Wyszukaj
+                 {isMutating ? <span className="loading loading-spinner loading-sm" />
+                 : "Wyszukaj"}
                 </button>
               </div>
               <div className="flex pr-0">

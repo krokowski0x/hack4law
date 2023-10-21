@@ -22,7 +22,7 @@ const runQuery = async (question: string) => {
   ------------
   SCHEMA: {schema}
   ------------
-  QUESTION: {question}
+  QUESTION IN POLISH LANGUAGE: {question}
   ------------
   SQL QUERY:`);
 
@@ -41,7 +41,7 @@ const runQuery = async (question: string) => {
   ------------
   SCHEMA: {schema}
   ------------
-  QUESTION: {question}
+  QUESTION IN POLISH LANGUAGE: {question}
   ------------
   SQL QUERY: {query}
   ------------

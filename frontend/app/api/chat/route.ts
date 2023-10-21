@@ -50,7 +50,7 @@ export async function POST(req: NextRequest, res: NextApiResponse) {
     {
       pineconeIndex: index,
       textKey: 'text',
-      namespace: "III RC 204/21",
+      namespace: body.namespace,
     },
   );
 
