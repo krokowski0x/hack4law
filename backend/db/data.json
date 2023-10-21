@@ -1,0 +1,515 @@
+{
+    "III RC 204/21": {
+        "reference_number": "III RC 204/21",
+        "court": "Sad Rejonowy w Gizycku",
+        "judgment_date": "2021-12-30",
+        "publication_date": "2022-02-08",
+        "mother_income": 909,
+        "father_income": 4350,
+        "siblings": 2,
+        "children": [
+            {
+                "child_age": 4,
+                "alimony_asked": 600,
+                "alimony_granted": 500,
+                "general_expenses_plaintiff": null,
+                "general_expenses_court": 1000,
+                "additional_costs": 200
+            },
+            {
+                "child_age": 2.5,
+                "alimony_asked": 600,
+                "alimony_granted": 400,
+                "general_expenses_plaintiff": null,
+                "general_expenses_court": 750,
+                "additional_costs": 750
+            }
+        ]
+    },
+    "III RC 191/15": {
+        "reference_number": "III RC 191/15",
+        "court": "Sad Rejonowy w Zabkowicach Slaskich",
+        "judgment_date": "2016-02-09",
+        "publication_date": "2016-03-15",
+        "mother_income": 1380,
+        "father_income": 1380,
+        "siblings": 2,
+        "children": [
+            {
+                "child_age": 4,
+                "alimony_asked": 700,
+                "alimony_granted": 300,
+                "general_expenses_plaintiff": null,
+                "general_expenses_court": 650,
+                "additional_costs": null
+            },
+            {
+                "child_age": 2,
+                "alimony_asked": 700,
+                "alimony_granted": 300,
+                "general_expenses_plaintiff": null,
+                "general_expenses_court": 550,
+                "additional_costs": 550
+            }
+        ]
+    },
+    "III RC 163/21": {
+        "reference_number": "III RC 163/21",
+        "court": "Sad Rejonowy w Chelmnie",
+        "judgment_date": "2022-06-02",
+        "publication_date": "2022-07-07",
+        "mother_income": 3800,
+        "father_income": 7200,
+        "siblings": 0,
+        "children": [
+            {
+                "child_age": 7,
+                "alimony_asked": 1800,
+                "alimony_granted": 1200,
+                "general_expenses_plaintiff": 3400,
+                "general_expenses_court": 2560,
+                "additional_costs": null
+            }
+        ]
+    },
+    "III RC 98/18": {
+        "reference_number": "III RC 98/18",
+        "court": "Sad Rejonowy w Wagrowcu",
+        "judgment_date": "2019-01-22",
+        "publication_date": "2019-12-06",
+        "mother_income": 1634,
+        "father_income": 1900,
+        "siblings": 0,
+        "children": [
+            {
+                "child_age": 7,
+                "alimony_asked": 500,
+                "alimony_granted": 700,
+                "general_expenses_plaintiff": 1300,
+                "general_expenses_court": 1300,
+                "additional_costs": null
+            }
+        ]
+    },
+    "IV RC 546/20": {
+        "reference_number": "IV RC 546/20",
+        "court": "Sad Rejonowy w Rybniku",
+        "judgment_date": "2021-08-27",
+        "publication_date": "2023-02-28",
+        "mother_income": 3140,
+        "father_income": 6033,
+        "siblings": 2,
+        "children": [
+            {
+                "child_age": null,
+                "alimony_asked": 1300,
+                "alimony_granted": 900,
+                "general_expenses_plaintiff": 1650,
+                "general_expenses_court": 1530,
+                "additional_costs": null
+            },
+            {
+                "child_age": null,
+                "alimony_asked": 1300,
+                "alimony_granted": 900,
+                "general_expenses_plaintiff": 1650,
+                "general_expenses_court": 1530,
+                "additional_costs": 1530
+            },
+            {
+                "child_age": 2,
+                "alimony_asked": 1000,
+                "alimony_granted": 800,
+                "general_expenses_plaintiff": 1350,
+                "general_expenses_court": 1200,
+                "additional_costs": 1200
+            }
+        ]
+    },
+    "III RC 239/18": {
+        "reference_number": "III RC 239/18",
+        "court": "Sad Rejonowy w Kaliszu",
+        "judgment_date": "2019-03-01",
+        "publication_date": "2019-05-23",
+        "father_income": 5341,
+        "siblings": 1,
+        "children": [
+            {
+                "child_age": 13,
+                "alimony_asked": 1000,
+                "alimony_granted": 850,
+                "general_expenses_plaintiff": null,
+                "general_expenses_court": 1700,
+                "additional_costs": null
+            },
+            {
+                "child_age": 10,
+                "alimony_asked": 1000,
+                "alimony_granted": 800,
+                "general_expenses_plaintiff": null,
+                "general_expenses_court": 1600,
+                "additional_costs": 1600
+            }
+        ]
+    },
+    "III RC 66/19": {
+        "reference_number": "III RC 66/19",
+        "court": "Sad Rejonowy w Kaliszu",
+        "judgment_date": "2019-08-16",
+        "publication_date": "2019-09-27",
+        "mother_income": 3241,
+        "father_income": 1450,
+        "siblings": 1,
+        "children": [
+            {
+                "child_age": 12,
+                "alimony_asked": 2000,
+                "alimony_granted": 850,
+                "general_expenses_plaintiff": null,
+                "general_expenses_court": 1300,
+                "additional_costs": 1700
+            },
+            {
+                "child_age": 10,
+                "alimony_asked": 2000,
+                "alimony_granted": 750,
+                "general_expenses_plaintiff": null,
+                "general_expenses_court": 1100,
+                "additional_costs": 1100
+            }
+        ]
+    },
+    "III RC 53/21": {
+        "reference_number": "III RC 53/21",
+        "court": "Sad Rejonowy w Toruniu",
+        "judgment_date": "2022-04-22",
+        "publication_date": "2022-12-19",
+        "mother_income": null,
+        "father_income": null,
+        "siblings": 1,
+        "children": [
+            {
+                "child_age": null,
+                "alimony_asked": 2000,
+                "alimony_granted": 900,
+                "general_expenses_plaintiff": 4872,
+                "general_expenses_court": 2250,
+                "additional_costs": null
+            },
+            {
+                "child_age": null,
+                "alimony_asked": 2000,
+                "alimony_granted": 900,
+                "general_expenses_plaintiff": 4427,
+                "general_expenses_court": 2250,
+                "additional_costs": 2250
+            }
+        ]
+    },
+    "III RC 27/23": {
+        "reference_number": "III RC 27/23",
+        "court": "Sad Rejonowy w Lidzbarku Warminskim",
+        "judgment_date": "2023-06-01",
+        "publication_date": "2023-07-07",
+        "mother_income": 2731,
+        "father_income": 2670,
+        "siblings": 1,
+        "children": [
+            {
+                "child_age": 10,
+                "alimony_asked": 850,
+                "alimony_granted": 600,
+                "general_expenses_plaintiff": 1700,
+                "general_expenses_court": 1100,
+                "additional_costs": null
+            },
+            {
+                "child_age": 14,
+                "alimony_asked": 1000,
+                "alimony_granted": 800,
+                "general_expenses_plaintiff": 1700,
+                "general_expenses_court": 1400,
+                "additional_costs": 1400
+            }
+        ]
+    },
+    "III RC 503/21": {
+        "reference_number": "III RC 503/21",
+        "court": "Sad Rejonowy w Toruniu",
+        "judgment_date": "2022-05-10",
+        "publication_date": "2022-09-14",
+        "mother_income": null,
+        "father_income": 3534,
+        "siblings": 0,
+        "children": [
+            {
+                "child_age": null,
+                "alimony_asked": 1500,
+                "alimony_granted": 1000,
+                "general_expenses_plaintiff": 2500,
+                "general_expenses_court": null,
+                "additional_costs": null
+            }
+        ]
+    },
+    "III RC 111/22": {
+        "reference_number": "III RC 111/22",
+        "court": "Sad Rejonowy w Lidzbarku Warminskim",
+        "judgment_date": "2023-01-10",
+        "publication_date": "2023-01-27",
+        "mother_income": 3946,
+        "father_income": 5600,
+        "siblings": 0,
+        "children": [
+            {
+                "child_age": 14,
+                "alimony_asked": 1000,
+                "alimony_granted": 850,
+                "general_expenses_plaintiff": null,
+                "general_expenses_court": 1700,
+                "additional_costs": 2500
+            }
+        ]
+    },
+    "XIII Ca 421/14": {
+        "reference_number": "XIII Ca 421/14",
+        "court": "Sad Okregowy we Wroclawiu",
+        "judgment_date": "2015-01-07",
+        "publication_date": "2015-02-17",
+        "mother_income": 1700,
+        "father_income": 2000,
+        "siblings": 0,
+        "children": [
+            {
+                "child_age": 11,
+                "alimony_asked": 450,
+                "alimony_granted": 600,
+                "general_expenses_plaintiff": 1000,
+                "general_expenses_court": 1200,
+                "additional_costs": null
+            }
+        ]
+    },
+    "III RC 234/18": {
+        "reference_number": "III RC 234/18",
+        "court": "Sad Rejonowy w Wagrowcu",
+        "judgment_date": "2019-06-12",
+        "publication_date": "2019-07-11",
+        "mother_income": 4500,
+        "father_income": 3550,
+        "siblings": 1,
+        "children": [
+            {
+                "child_age": 14,
+                "alimony_asked": 1500,
+                "alimony_granted": 800,
+                "general_expenses_plaintiff": 2962,
+                "general_expenses_court": 1330,
+                "additional_costs": null
+            },
+            {
+                "child_age": 11,
+                "alimony_asked": 1500,
+                "alimony_granted": 760,
+                "general_expenses_plaintiff": 2962,
+                "general_expenses_court": 1260,
+                "additional_costs": 1260
+            }
+        ]
+    },
+    "III RC 101/21": {
+        "reference_number": "III RC 101/21",
+        "court": "Sad Rejonowy w Grudziadzu",
+        "judgment_date": "2021-10-18",
+        "publication_date": "2022-01-05",
+        "mother_income": 890,
+        "father_income": 2199,
+        "siblings": 1,
+        "children": [
+            {
+                "child_age": 17,
+                "alimony_asked": 800,
+                "alimony_granted": 500,
+                "general_expenses_plaintiff": null,
+                "general_expenses_court": null,
+                "additional_costs": null
+            },
+            {
+                "child_age": 12,
+                "alimony_asked": 800,
+                "alimony_granted": 500,
+                "general_expenses_plaintiff": null,
+                "general_expenses_court": null,
+                "additional_costs": null
+            }
+        ]
+    },
+    "III RC 767/16": {
+        "reference_number": "III RC 767/16",
+        "court": "Sad Rejonowy w Olsztynie",
+        "judgment_date": "2017-02-27",
+        "publication_date": "2017-08-03",
+        "mother_income": 0,
+        "father_income": 3200,
+        "siblings": 1,
+        "children": [
+            {
+                "child_age": 9,
+                "alimony_asked": 700,
+                "alimony_granted": 450,
+                "general_expenses_plaintiff": 1370,
+                "general_expenses_court": null,
+                "additional_costs": null
+            },
+            {
+                "child_age": 3,
+                "alimony_asked": 650,
+                "alimony_granted": 450,
+                "general_expenses_plaintiff": 1303,
+                "general_expenses_court": null,
+                "additional_costs": null
+            }
+        ]
+    },
+    "III RC 53/23": {
+        "reference_number": "III RC 53/23",
+        "court": "Sad Rejonowy w Szczytnie",
+        "judgment_date": "2023-05-09",
+        "publication_date": "2023-08-28",
+        "mother_income": 4550,
+        "father_income": 1272,
+        "siblings": 0,
+        "children": [
+            {
+                "child_age": 13,
+                "alimony_asked": 1100,
+                "alimony_granted": 850,
+                "general_expenses_plaintiff": 1800,
+                "general_expenses_court": 1800,
+                "additional_costs": null
+            }
+        ]
+    },
+    "V RC 249/19": {
+        "reference_number": "V RC 249/19",
+        "court": "Sad Rejonowy dla Warszawy-Mokotowa",
+        "judgment_date": "2021-07-14",
+        "publication_date": "2022-05-10",
+        "mother_income": 4700,
+        "father_income": 18700,
+        "siblings": 0,
+        "children": [
+            {
+                "child_age": 4,
+                "alimony_asked": 4000,
+                "alimony_granted": 2700,
+                "general_expenses_plaintiff": null,
+                "general_expenses_court": 3600,
+                "additional_costs": null
+            }
+        ]
+    },
+    "V RC 664/18": {
+        "reference_number": "V RC 664/18",
+        "court": "Sad Rejonowy dla Warszawy Pragi - Polnoc w Warszawie",
+        "judgment_date": "2022-03-29",
+        "publication_date": "2022-07-11",
+        "mother_income": 3400,
+        "father_income": 3200,
+        "siblings": 0,
+        "children": [
+            {
+                "child_age": 11,
+                "alimony_asked": 1200,
+                "alimony_granted": 800,
+                "general_expenses_plaintiff": null,
+                "general_expenses_court": 1700,
+                "additional_costs": null
+            }
+        ]
+    },
+    "V RC 217/20": {
+        "reference_number": "V RC 217/20",
+        "court": "Sadu Rejonowego dla Warszawy-Mokotowa w Warszawie",
+        "judgment_date": "2021-01-13",
+        "publication_date": "2021-11-25",
+        "mother_income": 10210,
+        "father_income": 12000,
+        "siblings": 0,
+        "children": [
+            {
+                "child_age": 10,
+                "alimony_asked": null,
+                "alimony_granted": 2800,
+                "general_expenses_plaintiff": null,
+                "general_expenses_court": 4810,
+                "additional_costs": 140
+            }
+        ]
+    },
+    "V RC 927/18": {
+        "reference_number": "V RC 927/18",
+        "court": "Sad Rejonowy dla Warszawy Pragi - Polnoc w Warszawie",
+        "judgment_date": "2020-08-11",
+        "publication_date": "2020-10-23",
+        "mother_income": 4100,
+        "father_income": 7900,
+        "siblings": 1,
+        "children": [
+            {
+                "child_age": 15,
+                "alimony_asked": 1500,
+                "alimony_granted": 1170,
+                "general_expenses_plaintiff": 2000,
+                "general_expenses_court": null,
+                "additional_costs": null
+            },
+            {
+                "child_age": null,
+                "alimony_asked": null,
+                "alimony_granted": null,
+                "general_expenses_plaintiff": null,
+                "general_expenses_court": null,
+                "additional_costs": null
+            }
+        ]
+    },
+    "VIII RC 201/19": {
+        "reference_number": "VIII RC 201/19",
+        "court": "Sad Rejonowy Szczecin-Centrum w Szczecinie",
+        "judgment_date": "2020-10-19",
+        "publication_date": "2021-07-27",
+        "mother_income": 1900,
+        "father_income": 7945,
+        "siblings": 0,
+        "children": [
+            {
+                "child_age": 10,
+                "alimony_asked": 1600,
+                "alimony_granted": 1100,
+                "general_expenses_plaintiff": 1885,
+                "general_expenses_court": 1885,
+                "additional_costs": null
+            }
+        ]
+    },
+    "VIII RC 124/19": {
+        "reference_number": "VIII RC 124/19",
+        "court": "Sad Rejonowy Szczecin-Centrum w Szczecinie",
+        "judgment_date": "2020-01-08",
+        "publication_date": "2020-09-02",
+        "mother_income": 3895,
+        "father_income": 8270,
+        "siblings": 2,
+        "children": [
+            {
+                "child_age": 21,
+                "alimony_asked": 3065,
+                "alimony_granted": 1700,
+                "general_expenses_plaintiff": 1885,
+                "general_expenses_court": 2731,
+                "additional_costs": null
+            }
+        ]
+    }
+}
