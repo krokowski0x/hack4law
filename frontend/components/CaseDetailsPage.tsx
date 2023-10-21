@@ -7,10 +7,14 @@ import useSWR from "swr";
 export default function CaseDetailsPage({
   caseDetails,
 }: {
-  caseDetails: CaseDetails;
+  caseDetails: CaseDetails[];
 }) {
-  const { messages, input, handleInputChange, handleSubmit } = useChat({body: {
-    namespace: caseDetails.reference_number}});
+  const { messages, input, handleInputChange, handleSubmit, isLoading } =
+    useChat({
+      body: {
+        namespace: caseDetails[0].reference_number,
+      },
+    });
   // const { data: inflationData, error } = useSWR([500, "2020-01"], fetcher);
 
   return (
@@ -19,25 +23,26 @@ export default function CaseDetailsPage({
         <div className="card bg-base-100 shadow-xl">
           <div className="p-8">
             <div className="flex justify-between">
-            <h2 className="card-title font-black">
-              Orzecznie {caseDetails.reference_number}
-            </h2>
-            <h3 className="text-lg underline decoration-double underline-offset-4 font-bold">{caseDetails.court}</h3>
-
+              <h2 className="card-title font-black">
+                Orzecznie {caseDetails[0].reference_number}
+              </h2>
+              <h3 className="text-lg underline decoration-double underline-offset-4 font-bold">
+                {caseDetails[0].court}
+              </h3>
             </div>
 
-            <i>z dnia {caseDetails.judgement_date}</i>
+            <i>z dnia {caseDetails[0].judgement_date}</i>
             <h2 className="text-lg font-bold my-2">Rodzice:</h2>
             <div className="flex justify-between">
               <b>Dochód matki</b>
-              <p>{caseDetails.mother_income || "-"}</p>
+              <p>{caseDetails[0].mother_income || "-"}</p>
             </div>
             <div className="flex justify-between">
               <b>Dochód ojca</b>
-              <p>{caseDetails.father_income || "-"}</p>
+              <p>{caseDetails[0].father_income || "-"}</p>
             </div>
             <h2 className="text-lg font-bold my-2">Dzieci:</h2>
-            {caseDetails.children?.map((child, i) => (
+            {caseDetails.map((child, i) => (
               <div key={i} className="flex flex-col gap-1 pb-4">
                 <hr />
 
@@ -70,7 +75,7 @@ export default function CaseDetailsPage({
             <div className="card-actions justify-end">
               <a
                 target="_blank"
-                href={caseDetails.website}
+                href={caseDetails[0].website}
                 className="btn btn-primary"
               >
                 Pełne orzeczenie
@@ -82,29 +87,42 @@ export default function CaseDetailsPage({
 
       <div className="flex flex-col w-1/2">
         {messages.map((m) => (
-          <div key={m.id} className={`${m.role === 'user' ? "justify-self-end bg-white items-center" : "items-start"} mb-8 opacity-90 p-4 rounded-3xl w-fit `}>
+          <div
+            key={m.id}
+            className={`${
+              m.role === "user"
+                ? "justify-self-end bg-white items-center"
+                : "items-start"
+            } mb-8 opacity-90 p-4 rounded-3xl w-fit `}
+          >
             <span className="font-bold text-lg">
               {m.role === "user" ? "👩‍⚖️: " : "⚖️✨: "}
-              </span>
+            </span>
             {m.role === "user" ? m.content : String(JSON.parse(m.content).text)}
             {m.role !== "user" &&
-              JSON.parse(m.content).sourceDocuments.map((doc: any, i: number) => (
-                <>
-                <details  key={i + 1} className="collapse collapse-arrow my-2">
-                  <summary className="collapse-title text-xl font-medium">
-                    Źródło {i + 1}
-                  </summary>
-                  <div className="collapse-content">
-                    <p>{doc.pageContent}</p>
-                    <b>
-                      Strona {doc.metadata["loc.pageNumber"]}, wiersze {doc.metadata["loc.lines.from"]} -{" "}
-                      {doc.metadata["loc.lines.to"]}
-                    </b>
-                  </div>
-                </details>
-                <hr />
-                </>
-              ))}
+              JSON.parse(m.content).sourceDocuments.map(
+                (doc: any, i: number) => (
+                  <>
+                    <details
+                      key={i + 1}
+                      className="collapse collapse-arrow my-2"
+                    >
+                      <summary className="collapse-title text-xl font-medium">
+                        Źródło {i + 1}
+                      </summary>
+                      <div className="collapse-content">
+                        <p>{doc.pageContent}</p>
+                        <b>
+                          Strona {doc.metadata["loc.pageNumber"]}, wiersze{" "}
+                          {doc.metadata["loc.lines.from"]} -{" "}
+                          {doc.metadata["loc.lines.to"]}
+                        </b>
+                      </div>
+                    </details>
+                    <hr />
+                  </>
+                )
+              )}
           </div>
         ))}
 
@@ -120,7 +138,11 @@ export default function CaseDetailsPage({
             className="input input-bordered w-full"
           />
           <button className="btn btn-primary" type="submit">
-            Zapytaj
+            {isLoading ? (
+              <span className="loading loading-spinner loading-sm" />
+            ) : (
+              "Zapytaj"
+            )}
           </button>
         </form>
       </div>

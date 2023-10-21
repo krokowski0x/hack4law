@@ -7,10 +7,7 @@ export interface CaseDetails {
   father_income?: number
   siblings?: number
   website?: string
-  children?: ChildDetails[]
-}
-
-export interface ChildDetails {
+  description?: string;
   child_age?: number
   alimony_asked?: number
   alimony_granted?: number

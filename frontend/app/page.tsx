@@ -5,7 +5,7 @@ import CaseDetailsPage from "@/components/CaseDetailsPage";
 import { CaseDetails } from "@/types/types";
 import { useEffect, useState } from "react";
 import useSWRMutation from "swr/mutation";
-import Image from 'next/image'
+import Image from "next/image";
 
 async function sendRequest(url: string, { arg }: { arg: { query: string } }) {
   return fetch(url, {
@@ -24,28 +24,32 @@ export default function Chat() {
   );
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<Partial<CaseDetails>[]>([]);
-  const [activeCase, setActiveCase] = useState<CaseDetails | null>();
+  const [sqlResults, setSqlResults] = useState<string>("");
+  const [activeCase, setActiveCase] = useState<CaseDetails[] | null>();
 
   return (
-
-    <div className="hero min-h-screen">
-
-      <div className="hero-content flex-col lg:flex-row-reverse w-full">
-        {/* <div className="max-w-md"> */}
-
-        {results.length === 0 && <Image src="/Lawyer.gif" alt={"Lawyer"} width={800}
-          height={800} />}
+    <div className={`${!activeCase && "hero"} min-h-screen`}>
+      <div className="hero-content p-8 flex-col lg:flex-row-reverse w-full">
+        {results.length === 0 && (
+          <Image src="/Lawyer.gif" alt={"Lawyer"} width={800} height={800} />
+        )}
         <div className="grid w-full grid-flow-row justify-stretch mr-4">
-          <div className="pb-4"><h1 className="text-5xl font-bold">verdict.ai ✨</h1></div>
-          {results.length === 0 && <p className="text-lg text-justify">Narzędzie dla profesjonalnych
-            pełnomocników,
-            pomagające w efektywnym
-            wyszukiwaniu podobnych orzeczeń i
-            ich analizie w formie rozmowy z
-            dokumentem. Wersja przystosowana do pracy z orzecznictwem w sprawach o <b>alimenty</b>.</p>}
+          <div className="pb-4">
+            <h1 className="text-5xl font-bold">verdict.ai ✨</h1>
+          </div>
+          {results.length === 0 && (
+            <p className="text-lg text-justify">
+              Narzędzie dla profesjonalnych pełnomocników, pomagające w
+              efektywnym wyszukiwaniu podobnych orzeczeń i ich analizie w formie
+              rozmowy z dokumentem. Wersja przystosowana do pracy z
+              orzecznictwem w sprawach o <b>alimenty</b>.
+            </p>
+          )}
           {activeCase ? (
             <>
-              <a className="link mb-4" onClick={() => setActiveCase(null)}>Wróć do wyników</a>
+              <a className="link mb-4" onClick={() => setActiveCase(null)}>
+                &#9664; Wróć do wyników
+              </a>
               <CaseDetailsPage caseDetails={activeCase} />
             </>
           ) : (
@@ -58,27 +62,45 @@ export default function Chat() {
                   placeholder="Sprawy w których dwójka nieletnich dzieci..."
                   onChange={(e) => setQuery(e.target.value)}
                 />
-
                 <button
                   className="btn btn-primary"
                   onClick={async () => {
                     try {
                       const result = await trigger({ query });
                       setResults(JSON.parse(result.sqlResult));
-                      console.log(results);
+                      setSqlResults(result.sql);
                     } catch (e) {
                       console.error(e);
                     }
                   }}
                 >
-                 {isMutating ? <span className="loading loading-spinner loading-sm" />
-                 : "Wyszukaj"}
+                  {isMutating ? (
+                    <span className="loading loading-spinner loading-sm" />
+                  ) : (
+                    "Wyszukaj"
+                  )}
                 </button>
+                <div className="max-w-xs">
+                  {sqlResults && (
+                    <details className="collapse collapse-arrow bg-white">
+                      <summary className="collapse-title font-medium">
+                        Zapytanie
+                      </summary>
+                      <div className="collapse-content">
+                        <code>{sqlResults}</code>
+                      </div>
+                    </details>
+                  )}
+                </div>
               </div>
-              <div className="flex pr-0">
-                {results.map((result) => (
+
+              <div className="grid grid-cols-3 gap-4">
+                {results.filter((v,i,a)=>a.findIndex(v2=>(v2.reference_number===v.reference_number))===i).map((result) => (
                   <div key={result.reference_number}>
-                    <CaseDetailsCard caseDetails={result} onClick={setActiveCase} />
+                    <CaseDetailsCard
+                      caseDetails={results.filter((r => r.reference_number === result.reference_number))}
+                      onClick={setActiveCase}
+                    />
                   </div>
                 ))}
               </div>
@@ -86,12 +108,6 @@ export default function Chat() {
           )}
         </div>
       </div>
-      {/* </div> */}
-      {/* <footer className="footer footer-center p-4 bg-base-300 text-base-content mb-0">
-  <aside>
-    <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
-  </aside>
-</footer> */}
     </div>
   );
 }

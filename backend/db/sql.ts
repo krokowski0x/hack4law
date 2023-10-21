@@ -19,6 +19,7 @@ const runQuery = async (question: string) => {
 
   const prompt =
     PromptTemplate.fromTemplate(`Based on the provided SQL table schema below, write a SQL query that would answer the user's question.
+    Always start the query with select * from. Always join Cases table with Children table.
   ------------
   SCHEMA: {schema}
   ------------
@@ -61,7 +62,6 @@ const runQuery = async (question: string) => {
       response: (input) => db.run(input.query),
     },
     {
-      result: finalResponsePrompt.pipe(llm).pipe(new StringOutputParser()),
       sql: (previousStepResult) => previousStepResult.query,
       sqlResult: (previousStepResult) => previousStepResult.response
     },
@@ -70,8 +70,6 @@ const runQuery = async (question: string) => {
   const finalResponse = await finalChain.invoke({
     question,
   });
-
-  console.log({ finalResponse });
 
   return finalResponse;
 };
