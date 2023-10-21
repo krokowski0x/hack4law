@@ -1,6 +1,6 @@
 CREATE TABLE Cases (
     reference_number VARCHAR(255),
-    case_website VARCHAR(255),
+    website VARCHAR(500),
     court VARCHAR(255),
     judgement_date DATE,
     publication_date DATE,
@@ -21,8 +21,3 @@ CREATE TABLE Children (
     PRIMARY KEY (reference_number),
     FOREIGN KEY (reference_number) REFERENCES Cases(reference_number)
 );
-
-INSERT INTO Cases ()
-VALUES 
-()
-

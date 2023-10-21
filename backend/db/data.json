@@ -7,6 +7,7 @@
         "mother_income": 909,
         "father_income": 4350,
         "siblings": 2,
+        "website": "https://orzeczenia.ms.gov.pl/content/$N/150515100001512_III_RC_000204_2021_Uz_2021-12-30_001",
         "children": [
             {
                 "child_age": 4,
@@ -22,7 +23,7 @@
                 "alimony_granted": 400,
                 "general_expenses_plaintiff": null,
                 "general_expenses_court": 750,
-                "additional_costs": 750
+                "additional_costs": 180
             }
         ]
     },
@@ -34,6 +35,7 @@
         "mother_income": 1380,
         "father_income": 1380,
         "siblings": 2,
+        "website": "https://orzeczenia.ms.gov.pl/content/$N/155020250001512_III_RC_000191_2015_Uz_2016-03-09_001",
         "children": [
             {
                 "child_age": 4,
@@ -49,7 +51,7 @@
                 "alimony_granted": 300,
                 "general_expenses_plaintiff": null,
                 "general_expenses_court": 550,
-                "additional_costs": 550
+                "additional_costs": null
             }
         ]
     },
@@ -61,6 +63,7 @@
         "mother_income": 3800,
         "father_income": 7200,
         "siblings": 0,
+        "website": "https://orzeczenia.ms.gov.pl/content/$N/151025100001512_III_RC_000163_2021_Uz_2022-06-02_002",
         "children": [
             {
                 "child_age": 7,
@@ -80,6 +83,7 @@
         "mother_income": 1634,
         "father_income": 1900,
         "siblings": 0,
+        "website": "https://orzeczenia.ms.gov.pl/content/$N/153510600001512_III_RC_000098_2018_Uz_2019-02-04_002",
         "children": [
             {
                 "child_age": 7,
@@ -99,6 +103,7 @@
         "mother_income": 3140,
         "father_income": 6033,
         "siblings": 2,
+        "website": "https://orzeczenia.ms.gov.pl/content/$N/151515250002012_IV_RC_000546_2020_Uz_2021-08-27_001",
         "children": [
             {
                 "child_age": null,
@@ -114,7 +119,7 @@
                 "alimony_granted": 900,
                 "general_expenses_plaintiff": 1650,
                 "general_expenses_court": 1530,
-                "additional_costs": 1530
+                "additional_costs": null
             },
             {
                 "child_age": 2,
@@ -122,7 +127,7 @@
                 "alimony_granted": 800,
                 "general_expenses_plaintiff": 1350,
                 "general_expenses_court": 1200,
-                "additional_costs": 1200
+                "additional_costs": null
             }
         ]
     },
@@ -133,6 +138,7 @@
         "publication_date": "2019-05-23",
         "father_income": 5341,
         "siblings": 1,
+        "website": "https://orzeczenia.ms.gov.pl/content/$N/152505100001512_III_RC_000239_2018_Uz_2019-03-01_001",
         "children": [
             {
                 "child_age": 13,
@@ -148,7 +154,7 @@
                 "alimony_granted": 800,
                 "general_expenses_plaintiff": null,
                 "general_expenses_court": 1600,
-                "additional_costs": 1600
+                "additional_costs": null
             }
         ]
     },
@@ -160,6 +166,7 @@
         "mother_income": 3241,
         "father_income": 1450,
         "siblings": 1,
+        "website": "https://orzeczenia.ms.gov.pl/content/$N/152505100001512_III_RC_000066_2019_Uz_2019-08-16_001",
         "children": [
             {
                 "child_age": 12,
@@ -175,7 +182,7 @@
                 "alimony_granted": 750,
                 "general_expenses_plaintiff": null,
                 "general_expenses_court": 1100,
-                "additional_costs": 1100
+                "additional_costs": null
             }
         ]
     },
@@ -187,6 +194,7 @@
         "mother_income": null,
         "father_income": null,
         "siblings": 1,
+        "website": "https://orzeczenia.ms.gov.pl/content/$N/151025200001512_III_RC_000053_2021_Uz_2022-04-22_001",
         "children": [
             {
                 "child_age": null,
@@ -202,7 +210,7 @@
                 "alimony_granted": 900,
                 "general_expenses_plaintiff": 4427,
                 "general_expenses_court": 2250,
-                "additional_costs": 2250
+                "additional_costs": 950
             }
         ]
     },
@@ -214,6 +222,7 @@
         "mother_income": 2731,
         "father_income": 2670,
         "siblings": 1,
+        "website": "https://orzeczenia.ms.gov.pl/content/$N/150515450001512_III_RC_000027_2023_Uz_2023-06-29_001",
         "children": [
             {
                 "child_age": 10,
@@ -229,7 +238,7 @@
                 "alimony_granted": 800,
                 "general_expenses_plaintiff": 1700,
                 "general_expenses_court": 1400,
-                "additional_costs": 1400
+                "additional_costs": 150
             }
         ]
     },
@@ -241,6 +250,7 @@
         "mother_income": null,
         "father_income": 3534,
         "siblings": 0,
+        "website": "https://orzeczenia.ms.gov.pl/content/$N/151025200001512_III_RC_000503_2021_Uz_2022-05-10_001",
         "children": [
             {
                 "child_age": null,
@@ -260,6 +270,7 @@
         "mother_income": 3946,
         "father_income": 5600,
         "siblings": 0,
+        "website": "https://orzeczenia.ms.gov.pl/content/$N/150515450001512_III_RC_000111_2022_Uz_2023-01-24_001",
         "children": [
             {
                 "child_age": 14,
@@ -279,6 +290,7 @@
         "mother_income": 1700,
         "father_income": 2000,
         "siblings": 0,
+        "website": "https://orzeczenia.ms.gov.pl/content/$N/155025000006509_XIII_Ca_000421_2014_Uz_2015-01-07_001",
         "children": [
             {
                 "child_age": 11,
@@ -298,6 +310,7 @@
         "mother_income": 4500,
         "father_income": 3550,
         "siblings": 1,
+        "website": "https://orzeczenia.ms.gov.pl/content/$N/153510600001512_III_RC_000234_2018_Uz_2019-06-24_001",
         "children": [
             {
                 "child_age": 14,
@@ -313,7 +326,7 @@
                 "alimony_granted": 760,
                 "general_expenses_plaintiff": 2962,
                 "general_expenses_court": 1260,
-                "additional_costs": 1260
+                "additional_costs": null
             }
         ]
     },
@@ -325,6 +338,7 @@
         "mother_income": 890,
         "father_income": 2199,
         "siblings": 1,
+        "website": "https://orzeczenia.ms.gov.pl/content/$N/151025150001512_III_RC_000101_2021_Uz_2021-11-05_001",
         "children": [
             {
                 "child_age": 17,
@@ -352,6 +366,7 @@
         "mother_income": 0,
         "father_income": 3200,
         "siblings": 1,
+        "website": "https://orzeczenia.ms.gov.pl/content/$N/150515250001512_III_RC_000767_2016_Uz_2017-02-27_001",
         "children": [
             {
                 "child_age": 9,
@@ -379,6 +394,7 @@
         "mother_income": 4550,
         "father_income": 1272,
         "siblings": 0,
+        "website": "https://orzeczenia.ms.gov.pl/content/$N/150515300001512_III_RC_000053_2023_Uz_2023-05-29_002",
         "children": [
             {
                 "child_age": 13,
@@ -398,6 +414,7 @@
         "mother_income": 4700,
         "father_income": 18700,
         "siblings": 0,
+        "website": "https://orzeczenia.ms.gov.pl/content/$N/154505200002512_V_RC_000249_2019_Uz_2021-07-14_002",
         "children": [
             {
                 "child_age": 4,
@@ -417,6 +434,7 @@
         "mother_income": 3400,
         "father_income": 3200,
         "siblings": 0,
+        "website": "https://orzeczenia.ms.gov.pl/content/$N/154510250002512_V_RC_000664_2018_Uz_2022-03-29_003",
         "children": [
             {
                 "child_age": 11,
@@ -436,6 +454,7 @@
         "mother_income": 10210,
         "father_income": 12000,
         "siblings": 0,
+        "website": "https://orzeczenia.ms.gov.pl/content/$N/154505200002512_V_RC_000217_2020_Uz_2021-02-22_001",
         "children": [
             {
                 "child_age": 10,
@@ -455,20 +474,13 @@
         "mother_income": 4100,
         "father_income": 7900,
         "siblings": 1,
+        "website": "https://orzeczenia.ms.gov.pl/content/$N/154510250002512_V_RC_000927_2018_Uz_2020-08-11_002",
         "children": [
             {
                 "child_age": 15,
                 "alimony_asked": 1500,
                 "alimony_granted": 1170,
                 "general_expenses_plaintiff": 2000,
-                "general_expenses_court": null,
-                "additional_costs": null
-            },
-            {
-                "child_age": null,
-                "alimony_asked": null,
-                "alimony_granted": null,
-                "general_expenses_plaintiff": null,
                 "general_expenses_court": null,
                 "additional_costs": null
             }
@@ -482,6 +494,7 @@
         "mother_income": 1900,
         "father_income": 7945,
         "siblings": 0,
+        "website": "https://orzeczenia.ms.gov.pl/content/$N/155515300004012_VIII_RC_000201_2019_Uz_2020-10-19_001",
         "children": [
             {
                 "child_age": 10,
@@ -501,6 +514,7 @@
         "mother_income": 3895,
         "father_income": 8270,
         "siblings": 2,
+        "website": "https://orzeczenia.ms.gov.pl/content/$N/155515300004012_VIII_RC_000124_2019_Uz_2020-01-28_001",
         "children": [
             {
                 "child_age": 21,
