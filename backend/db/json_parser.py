@@ -1,6 +1,5 @@
 import json
 
-# Assuming data is your input JSON data
 data = [
     {
       "reference_number": "III RC 204/21",
@@ -377,7 +376,7 @@ for item in data:
             "alimony_granted": item.get("alimony_granted" if i == 0 else f"alimony_granted_{i}", None),
             "general_expenses_plaintiff": item.get("general_expenses_plaintiff" if i == 0 else f"general_expenses_plaintiff_{i}", None),
             "general_expenses_court": item.get("general_expenses_court" if i == 0 else f"general_expenses_court_{i}", None),
-            "additional_costs": item.get("additional_costs" if i == 0 else f"general_expenses_court_{i}", None)
+            "additional_costs": item.get("additional_costs" if i == 0 else f"additional_costs_{i}", None)
         }
   
         print(child)
