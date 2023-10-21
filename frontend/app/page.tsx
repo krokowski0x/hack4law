@@ -5,6 +5,7 @@ import CaseDetailsPage from "@/components/CaseDetailsPage";
 import { CaseDetails } from "@/types/types";
 import { useEffect, useState } from "react";
 import useSWRMutation from "swr/mutation";
+import Image from 'next/image'
 
 async function sendRequest(url: string, { arg }: { arg: { query: string } }) {
   return fetch(url, {
@@ -26,50 +27,70 @@ export default function Chat() {
   const [activeCase, setActiveCase] = useState<CaseDetails | null>();
 
   return (
-    <div className="mx-auto w-full h-full flex flex-col p-8">
-      <h1 className="normal-case text-2xl font-bold mb-20">Alimenciarz 2.0</h1>
 
+    <div className="hero min-h-screen">
 
-      {activeCase ? (
-        <>
-        <a className="link mb-4" onClick={() => setActiveCase(null)}>Wróć do wyników</a>
-        <CaseDetailsPage caseDetails={activeCase}  />
-        </>
-      ) : (
-        <>
-              <div className="my-4 flex justify-center gap-2">
-        <input
-          type="text"
-          className="input input-bordered w-full max-w-md"
-          value={query}
-          placeholder="Sprawy w których dwójka nieletnich dzieci..."
-          onChange={(e) => setQuery(e.target.value)}
-        />
+      <div className="hero-content flex-col lg:flex-row-reverse w-full">
+        {/* <div className="max-w-md"> */}
 
-        <button
-          className="btn btn-primary"
-          onClick={async () => {
-            try {
-              const result = await trigger({ query });
-              setResults(result.sqlResult);
-              console.log(results);
-            } catch (e) {
-              console.error(e);
-            }
-          }}
-        >
-          Wyszukaj
-        </button>
-      </div>
-        <div className="flex gap-4">
-          {results.map((result) => (
-            <div key={result.reference_number}>
-              <CaseDetailsCard caseDetails={result} onClick={setActiveCase} />
-            </div>
-          ))}
+        {results.length === 0 && <Image src="/Lawyer.gif" alt={"Lawyer"} width={800}
+          height={800} />}
+        <div className="grid w-full grid-flow-row justify-stretch mr-4">
+          <div className="pb-4"><h1 className="text-5xl font-bold">verdict.ai ✨</h1></div>
+          {results.length === 0 && <p className="text-lg text-justify">Narzędzie dla profesjonalnych
+            pełnomocników,
+            pomagające w efektywnym
+            wyszukiwaniu podobnych orzeczeń i
+            ich analizie w formie rozmowy z
+            dokumentem. Wersja przystosowana do pracy z orzecznictwem w sprawach o <b>alimenty</b>.</p>}
+          {activeCase ? (
+            <>
+              <a className="link mb-4" onClick={() => setActiveCase(null)}>Wróć do wyników</a>
+              <CaseDetailsPage caseDetails={activeCase} />
+            </>
+          ) : (
+            <>
+              <div className="my-4 flex justify-items-center gap-4">
+                <input
+                  type="text"
+                  className="input input-bordered input w-full"
+                  value={query}
+                  placeholder="Sprawy w których dwójka nieletnich dzieci..."
+                  onChange={(e) => setQuery(e.target.value)}
+                />
+
+                <button
+                  className="btn btn-primary"
+                  onClick={async () => {
+                    try {
+                      const result = await trigger({ query });
+                      setResults(result.sqlResult);
+                      console.log(results);
+                    } catch (e) {
+                      console.error(e);
+                    }
+                  }}
+                >
+                  Wyszukaj
+                </button>
+              </div>
+              <div className="flex pr-0">
+                {results.map((result) => (
+                  <div key={result.reference_number}>
+                    <CaseDetailsCard caseDetails={result} onClick={setActiveCase} />
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
         </div>
-        </>
-      )}
+      </div>
+      {/* </div> */}
+      {/* <footer className="footer footer-center p-4 bg-base-300 text-base-content mb-0">
+  <aside>
+    <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
+  </aside>
+</footer> */}
     </div>
   );
 }

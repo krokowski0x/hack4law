@@ -6,7 +6,7 @@ import { Pinecone } from '@pinecone-database/pinecone';
 import { DirectoryLoader } from 'langchain/document_loaders/fs/directory';
 
 const filePath = 'docs';
-const NAMESPACE = "III RC 204/21"
+const NAMESPACE = "VIII RC 124/19"
 
 export const run = async () => {
   try {
