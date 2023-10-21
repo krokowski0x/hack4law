@@ -12,13 +12,17 @@ app.use(express.json());
 const port = process.env.PORT;
 
 app.post("/api/sql", async (req: Request, res: Response) => {
-  const { query } = req.body;
+  try {
+    const { query } = req.body;
 
-  const response = await runQuery(query)
-
-  console.log(response)
-
-  res.send(response);
+    const response = await runQuery(query)
+  
+    console.log(response)
+  
+    res.send(response);
+  } catch (error) {
+    res.status(500).send(error.message)
+  }
 });
 
 app.listen(port, () => {
