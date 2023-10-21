@@ -7,6 +7,7 @@ CREATE TABLE Cases (
     mother_income DECIMAL(10,2),
     father_income DECIMAL(10,2),
     siblings INT,
+    description VARCHAR(1000),
     PRIMARY KEY (reference_number)
 );
 
