@@ -47,23 +47,23 @@ export default function Chat() {
           )}
           {activeCase ? (
             <>
-              <a className="link mb-4" onClick={() => setActiveCase(null)}>
+              <a className="link underline-offset-4 mb-4" onClick={() => setActiveCase(null)}>
                 &#9664; Wróć do wyników
               </a>
               <CaseDetailsPage caseDetails={activeCase} />
             </>
           ) : (
             <>
-              <div className="my-4 flex justify-items-center gap-4">
+              <div className="my-8 flex justify-items-center gap-4">
                 <input
                   type="text"
-                  className="input input-bordered w-full"
+                  className="input input-bordered w-full h-full"
                   value={query}
                   placeholder="Sprawy w których dwójka nieletnich dzieci..."
                   onChange={(e) => setQuery(e.target.value)}
                 />
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-primary h-full"
                   onClick={async () => {
                     try {
                       const result = await trigger({ query });
@@ -94,7 +94,7 @@ export default function Chat() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-8">
                 {results.filter((v,i,a)=>a.findIndex(v2=>(v2.reference_number===v.reference_number))===i).map((result) => (
                   <div key={result.reference_number}>
                     <CaseDetailsCard

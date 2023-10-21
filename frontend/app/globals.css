@@ -14,3 +14,9 @@ button, a.btn, footer {
   color: white !important;
   border-color: rgb(0, 89, 65) !important;
 }
+
+button:hover, a.btn:hover {
+  background-color: rgba(0, 0, 0, 0) !important;
+  outline: rgba(0, 89, 65, 1) solid 2px;
+  color: rgba(0, 89, 65, 1) !important;
+}

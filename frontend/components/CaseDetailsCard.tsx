@@ -10,7 +10,7 @@ export default function CaseDetailsCard({
   const desc =
     "Sprawa dotyczyła alimentów dla małoletniej J.K., reprezentowanej przez jej matkę M.S., przeciwko R.K., ojcu dziecka. M.S. wniosła o zasądzenie alimentów w kwocie 1100 zł miesięcznie, podczas gdy R.K., pracujący na ¼ etatu jako mechanik samochodowy, wnosił o oddalenie powództwa ponad kwotę 600 zł, twierdząc, że nie jest w stanie przeznaczyć większej kwoty na utrzymanie dziecka. Sąd zasądził alimenty w kwocie 850 zł miesięcznie, płatne z góry do dnia 10 każdego miesiąca, począwszy od 1 maja 2023 roku";
   return (
-    <div className="card w-96 h-full bg-base-100 shadow-xl">
+    <div className="card w-full h-full bg-base-100 shadow-xl">
       <div className="card-body">
         <h2 className="card-title">
           Orzeczenie {caseDetails[0].reference_number}
