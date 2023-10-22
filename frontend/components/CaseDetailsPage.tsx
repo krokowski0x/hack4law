@@ -1,8 +1,6 @@
 import { CaseDetails } from "@/types/types";
-import { fetcher } from "@/utils/inflation";
 import { useChat } from "ai/react";
-import { useEffect } from "react";
-import useSWR from "swr";
+import { TypeAnimation } from "react-type-animation";
 
 export default function CaseDetailsPage({
   caseDetails,
@@ -15,7 +13,6 @@ export default function CaseDetailsPage({
         namespace: caseDetails[0].reference_number,
       },
     });
-  // const { data: inflationData, error } = useSWR([500, "2020-01"], fetcher);
 
   return (
     <div className="flex gap-4 p-4 overflow-y-auto">
@@ -32,7 +29,20 @@ export default function CaseDetailsPage({
             </div>
 
             <i>z dnia {caseDetails[0].judgement_date}</i>
-            <h2 className="text-lg font-bold my-2">Rodzice:</h2>
+            <h2 className="text-lg font-bold my-2">Streszecznie:</h2>
+            <svg
+              className="w-4 h-4 text-gray-400 dark:text-gray-600"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 18 14"
+            >
+              <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z" />
+            </svg>
+            <i className="text-justify">
+              &quot;{caseDetails[0].description}&quot;
+            </i>
+            <h2 className="text-lg font-bold mb-2 mt-4">Rodzice:</h2>
             <div className="flex justify-between">
               <b>Dochód matki</b>
               <p>{caseDetails[0].mother_income || "-"}</p>
@@ -98,7 +108,16 @@ export default function CaseDetailsPage({
             <span className="font-bold text-lg">
               {m.role === "user" ? "👩‍⚖️: " : "⚖️✨: "}
             </span>
-            {m.role === "user" ? m.content : String(JSON.parse(m.content).text)}
+            <TypeAnimation
+              sequence={[
+                m.role === "user"
+                  ? m.content
+                  : String(JSON.parse(m.content).text),
+              ]}
+              speed={80}
+              cursor={false}
+            />
+
             {m.role !== "user" &&
               JSON.parse(m.content).sourceDocuments.map(
                 (doc: any, i: number) => (

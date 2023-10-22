@@ -3,7 +3,7 @@
 import CaseDetailsCard from "@/components/CaseDetailsCard";
 import CaseDetailsPage from "@/components/CaseDetailsPage";
 import { CaseDetails } from "@/types/types";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useSWRMutation from "swr/mutation";
 import Image from "next/image";
 
@@ -47,7 +47,10 @@ export default function Chat() {
           )}
           {activeCase ? (
             <>
-              <a className="link underline-offset-4 mb-4" onClick={() => setActiveCase(null)}>
+              <a
+                className="link underline-offset-4 mb-4"
+                onClick={() => setActiveCase(null)}
+              >
                 &#9664; Wróć do wyników
               </a>
               <CaseDetailsPage caseDetails={activeCase} />
@@ -95,14 +98,23 @@ export default function Chat() {
               </div>
 
               <div className="grid grid-cols-3 gap-8">
-                {results.filter((v,i,a)=>a.findIndex(v2=>(v2.reference_number===v.reference_number))===i).map((result) => (
-                  <div key={result.reference_number}>
-                    <CaseDetailsCard
-                      caseDetails={results.filter((r => r.reference_number === result.reference_number))}
-                      onClick={setActiveCase}
-                    />
-                  </div>
-                ))}
+                {results
+                  .filter(
+                    (v, i, a) =>
+                      a.findIndex(
+                        (v2) => v2.reference_number === v.reference_number
+                      ) === i
+                  )
+                  .map((result) => (
+                    <div key={result.reference_number}>
+                      <CaseDetailsCard
+                        caseDetails={results.filter(
+                          (r) => r.reference_number === result.reference_number
+                        )}
+                        onClick={setActiveCase}
+                      />
+                    </div>
+                  ))}
               </div>
             </>
           )}
