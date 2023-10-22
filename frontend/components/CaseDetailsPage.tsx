@@ -114,7 +114,7 @@ export default function CaseDetailsPage({
                   ? m.content
                   : String(JSON.parse(m.content).text),
               ]}
-              speed={80}
+              speed={95}
               cursor={false}
             />
 
